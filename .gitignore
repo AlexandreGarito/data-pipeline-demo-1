@@ -1,0 +1,7 @@
+.vscode/
+.pytest_cache/
+venv-sde/
+profile/
+__pycache__/
+*.pyc
+*.csv

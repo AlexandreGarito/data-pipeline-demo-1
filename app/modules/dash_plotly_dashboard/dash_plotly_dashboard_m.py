@@ -1,0 +1,470 @@
+"""
+This dash_plotly_dashboard module uses a unique function to create an interactive
+dashboard webserver with Dash & Plotly libraries.
+
+Function:
+    - dashboard : creates a simple dashboard with 3 callbacks for interactivity.
+    - render_content_marketcap : Renders the left-side charts representing 
+      classifications by market cap.
+    - render_content_scatter : Renders the right-side charts representing the
+      3 dimensions scatter.
+    - update_highlighted_point : Interactivity when cursor is on a given company point.
+"""
+import logging
+
+import dash_bootstrap_components as dbc
+import pandas as pd
+import plotly.express as px
+from dash import dcc, html, Dash
+from dash.dependencies import Input, Output
+from sklearn.preprocessing import MinMaxScaler
+
+
+def dashboard():
+    
+    logging.info("Dash Plotly dashboard started.")
+    
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    camera = dict(eye=dict(x=0, y=-2.5, z=0.1))
+
+    df = pd.read_csv("final_data.csv")
+    df["normalized_sentiment"] = scaler.fit_transform(df[["yest_twitter_mean_sentiment_score"]])
+    df["normalized_sentiment"] = df["normalized_sentiment"].round(2)
+
+    app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+    app.layout = html.Div(
+        style={"backgroundColor": "#1F2630"},
+        children=[
+            html.Br(),
+            html.H1(
+                "Super Data Explorer",
+                style={
+                    "padding-top": "0px",
+                    "padding-left": "20px",
+                    "padding-bottom": "20px",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#77A4D1",
+                    "font-weight": "bold",
+                    "font-size": 25,
+                },
+            ),
+            html.H3(
+                "Public Tech Company Study",
+                style={
+                    "textAlign": "center",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 35,
+                },
+            ),
+            html.H3(
+                "data is updated daily",
+                style={
+                    "textAlign": "left",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 13,
+                    "padding": "15px 0px 0px 20px",
+                },
+            ),
+            html.H3(
+                "Alexandre Garito little data viz demo",
+                style={
+                    "padding-top": "5px",
+                    "padding-left": "20px",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#43505b",
+                    "font-weight": "bold",
+                    "font-size": 10,
+                },
+            ),
+            html.Div(
+                [
+                    dcc.Tabs(
+                        style={"fontWeight": "bold", "color": "#c9c9c9"},
+                        id="tabs-marketcap",
+                        value="tab-treemap",
+                        children=[
+                            dcc.Tab(label="Treemap", value="tab-treemap"),
+                            dcc.Tab(label="Bar Chart", value="tab-barchart"),
+                        ],
+                        colors={
+                            "border": "#252E3F",
+                            "primary": "#3a485b",
+                            "background": "#3a485b",
+                        },
+                    )
+                ],
+                style={
+                    "width": "50%",
+                    "display": "inline-block",
+                    "backgroundColor": "#1F2630",
+                    "padding-top": "0px",
+                    "padding-left": "20px",
+                    "padding-right": "20px",
+                    "padding-bottom": "0px",
+                },
+            ),
+            html.Div(
+                [
+                    dcc.Tabs(
+                        style={"fontWeight": "bold", "color": "#c9c9c9"},
+                        id="tabs-scatter",
+                        value="tab-3d-scatter",
+                        children=[
+                            dcc.Tab(label="3D Scatter", value="tab-3d-scatter"),
+                            dcc.Tab(label="2D Scatter", value="tab-2d-scatter"),
+                        ],
+                        colors={
+                            "border": "#252E3F",
+                            "primary": "#3a485b",
+                            "background": "#3a485b",
+                        },
+                    )
+                ],
+                style={
+                    "width": "50%",
+                    "display": "inline-block",
+                    "backgroundColor": "#1F2630",
+                    "padding-top": "0px",
+                    "padding-left": "20px",
+                    "padding-right": "20px",
+                    "padding-bottom": "0px",
+                },
+            ),
+            html.Div(
+                id="tabs-content-marketcap",
+                style={
+                    "width": "50%",
+                    "display": "inline-block",
+                    "backgroundColor": "#1F2630",
+                    "padding-top": "0px",
+                    "padding-left": "20px",
+                    "padding-right": "20px",
+                    "padding-bottom": "20px",
+                },
+            ),
+            html.Div(
+                id="tabs-content-scatter",
+                style={
+                    "width": "50%",
+                    "display": "inline-block",
+                    "backgroundColor": "#1F2630",
+                    "padding-top": "0px",
+                    "padding-left": "20px",
+                    "padding-right": "20px",
+                    "padding-bottom": "20px",
+                },
+            ),
+        ],
+    )
+
+
+    @app.callback(
+        Output("tabs-content-marketcap", "children"), Input("tabs-marketcap", "value")
+    )
+    def render_content_marketcap(tab):
+        if tab == "tab-treemap":
+            return html.Div(
+                [
+                    dcc.Graph(
+                        id="graph-market-cap",
+                        figure=px.treemap(
+                            df,
+                            path=["companyName"],
+                            values="marketCap",
+                            hover_name="companyName",
+                            hover_data={"companyName": True, "marketCap": True},
+                            color="companyName",
+                            color_discrete_sequence=px.colors.qualitative.Alphabet,
+                            height=800,
+                            template="simple_white",
+                            title="Market Capitalization by Company ($)",
+                            labels={"marketCap": "Market Capitalization"},
+                        )
+                        .update_layout(
+                            font_size=10,
+                            font_color="#ffffff",
+                            paper_bgcolor="#252E3F",
+                            font_family="League Spartan",
+                        )
+                        .update_traces(
+                            hovertemplate=" <b>%{label}</b><br><br>Market Capitalization : %{value}<extra></extra>"
+                        )
+                        .update_traces(marker=dict(cornerradius=20)),
+                    )
+                ]
+            )
+        elif tab == "tab-barchart":
+            return html.Div(
+                [
+                    dcc.Graph(
+                        id="graph-market-cap",
+                        figure=px.bar(
+                            df,
+                            x="companyName",
+                            y="marketCap",
+                            hover_name="companyName",
+                            hover_data={"companyName": True, "marketCap": True},
+                            color="companyName",
+                            color_discrete_sequence=px.colors.qualitative.Alphabet,
+                            height=800,
+                            title="Market Capitalization by Company ($)",
+                            labels={
+                                "marketCap": "Market Capitalization",
+                                "companyName": "Company Name",
+                            },
+                            # orientation='h'
+                        )
+                        .update_layout(
+                            font_size=10,
+                            font_color="#ffffff",
+                            paper_bgcolor="#252E3F",
+                            font_family="League Spartan",
+                        )
+                        .update_traces(
+                            hovertemplate=" <b>%{x}</b><br><br>Market Capitalization : %{y}<extra></extra>"
+                        ),
+                    )
+                ]
+            )
+
+
+    @app.callback(
+        Output("tabs-content-scatter", "children"), Input("tabs-scatter", "value")
+    )
+    def render_content_scatter(tab):
+        if tab == "tab-3d-scatter":
+            return html.Div(
+                [
+                    dcc.Graph(
+                        id="graph-scatter",
+                        figure=px.scatter_3d(
+                            df,
+                            x="fullTimeEmployees",
+                            y="normalized_sentiment",
+                            z="marketCap",
+                            title="Capitalization per Employee & Sentiment",
+                            color="normalized_sentiment",
+                            hover_name="companyName",
+                            log_x=True,
+                            log_z=True,
+                            size="normalized_sentiment",
+                            height=800,
+                            size_max=30,
+                            color_continuous_scale="rdbu",
+                            labels=dict(
+                                companyName="Company Name",
+                                fullTimeEmployees="Full Time Employees",
+                                normalized_sentiment="Twitter Sentiment",
+                                marketCap="Market Capitalization ($)",
+                            ),
+                        ).update_layout(
+                            scene_camera=camera,
+                            font_size=10,
+                            font_color="#ffffff",
+                            paper_bgcolor="#252E3F",
+                            font_family="League Spartan",
+                        ),
+                    )
+                ]
+            )
+        elif tab == "tab-2d-scatter":
+            return html.Div(
+                [
+                    dcc.Graph(
+                        id="graph-scatter",
+                        figure=px.scatter(
+                            df,
+                            x="fullTimeEmployees",
+                            y="marketCap",
+                            title="Capitalization per Employee & Sentiment",
+                            color="normalized_sentiment",
+                            hover_name="companyName",
+                            log_x=True,
+                            log_y=True,
+                            size="normalized_sentiment",
+                            height=800,
+                            size_max=30,
+                            color_continuous_scale="rdbu",
+                            labels=dict(
+                                companyName="Company Name",
+                                fullTimeEmployees="Full Time Employees",
+                                normalized_sentiment="Twitter Sentiment",
+                                marketCap="Market Capitalization ($)",
+                            ),
+                        )
+                        .update_layout(
+                            yaxis2=dict(
+                                title="Another Y-axis", overlaying="y", position=0.85
+                            ),
+                            font_size=10,
+                            font_color="#ffffff",
+                            paper_bgcolor="#252E3F",
+                            font_family="League Spartan",
+                        )
+                        .update_yaxes(tickprefix="$"),
+                    )
+                ]
+            )
+
+
+    @app.callback(
+        Output("graph-scatter", "figure"),
+        Input("graph-market-cap", "hoverData"),
+        Input("tabs-scatter", "value"),
+    )
+    def update_highlighted_point(hoverData, tab):
+        if tab == "tab-3d-scatter":
+            company_name = hoverData["points"][0]["label"]
+
+            highlighted_df = df[df["companyName"] == company_name]
+
+            scatter_data = px.scatter_3d(
+                highlighted_df,
+                x="fullTimeEmployees",
+                y="normalized_sentiment",
+                z="marketCap",
+                title="Capitalization per Employee & Sentiment",
+                color="normalized_sentiment",
+                hover_name="companyName",
+                log_x=True,
+                log_z=True,
+                size="normalized_sentiment",
+                height=800,
+                size_max=30,
+                color_continuous_scale="rdbu",
+                labels=dict(
+                    companyName="Company Name",
+                    fullTimeEmployees="Full Time Employees",
+                    normalized_sentiment="Twitter Sentiment",
+                    marketCap="Market Capitalization ($)",
+                ),
+            ).update_layout(
+                scene_camera=camera,
+                font_size=10,
+                font_color="#ffffff",
+                paper_bgcolor="#252E3F",
+                font_family="League Spartan",
+            )
+
+            scatter_data["data"][0]["marker"]["color"] = "green"
+
+            not_highlighted_df = df[df["companyName"] != company_name]
+
+            not_highlighted_data = px.scatter_3d(
+                not_highlighted_df,
+                x="fullTimeEmployees",
+                y="normalized_sentiment",
+                z="marketCap",
+                title="Capitalization per Employee & Sentiment",
+                color="normalized_sentiment",
+                hover_name="companyName",
+                log_x=True,
+                log_z=True,
+                size="normalized_sentiment",
+                height=800,
+                size_max=30,
+                color_continuous_scale="rdbu",
+                labels=dict(
+                    companyName="Company Name",
+                    fullTimeEmployees="Full Time Employees",
+                    normalized_sentiment="Twitter Sentiment",
+                    marketCap="Market Capitalization ($)",
+                ),
+            ).update_layout(
+                scene_camera=camera,
+                font_size=10,
+                font_color="#ffffff",
+                paper_bgcolor="#252E3F",
+                font_family="League Spartan",
+            )
+
+            scatter_data.add_traces(not_highlighted_data["data"])
+
+            return scatter_data
+
+        elif tab == "tab-2d-scatter":
+            company_name = hoverData["points"][0]["label"]
+
+            highlighted_df = df[df["companyName"] == company_name]
+
+            scatter_data = (
+                px.scatter(
+                    highlighted_df,
+                    x="fullTimeEmployees",
+                    y="marketCap",
+                    title="Capitalization per Employee & Sentiment",
+                    color="normalized_sentiment",
+                    hover_name="companyName",
+                    log_x=True,
+                    log_y=True,
+                    size="normalized_sentiment",
+                    height=800,
+                    size_max=30,
+                    color_continuous_scale="rdbu",
+                    labels=dict(
+                        companyName="Company Name",
+                        fullTimeEmployees="Full Time Employees",
+                        normalized_sentiment="Twitter Sentiment",
+                        marketCap="Market Capitalization ($)",
+                    ),
+                )
+                .update_layout(
+                    yaxis2=dict(title="Another Y-axis", overlaying="y", position=0.85),
+                    font_size=10,
+                    font_color="#ffffff",
+                    paper_bgcolor="#252E3F",
+                    font_family="League Spartan",
+                )
+                .update_yaxes(tickprefix="$")
+            )
+
+            scatter_data["data"][0]["marker"]["color"] = "green"
+
+            not_highlighted_df = df[df["companyName"] != company_name]
+
+            not_highlighted_data = (
+                px.scatter(
+                    not_highlighted_df,
+                    x="fullTimeEmployees",
+                    y="marketCap",
+                    title="Capitalization per Employee & Sentiment",
+                    color="normalized_sentiment",
+                    hover_name="companyName",
+                    log_x=True,
+                    log_y=True,
+                    size="normalized_sentiment",
+                    height=800,
+                    size_max=30,
+                    color_continuous_scale="rdbu",
+                    labels=dict(
+                        companyName="Company Name",
+                        fullTimeEmployees="Full Time Employees",
+                        normalized_sentiment="Twitter Sentiment",
+                        marketCap="Market Capitalization ($)",
+                    ),
+                )
+                .update_layout(
+                    yaxis2=dict(title="Another Y-axis", overlaying="y", position=0.85),
+                    font_size=10,
+                    font_color="#ffffff",
+                    paper_bgcolor="#252E3F",
+                    font_family="League Spartan",
+                )
+                .update_yaxes(tickprefix="$")
+            )
+
+            scatter_data.add_traces(not_highlighted_data["data"])
+
+            return scatter_data
+
+
+    app.run_server(debug=True)
