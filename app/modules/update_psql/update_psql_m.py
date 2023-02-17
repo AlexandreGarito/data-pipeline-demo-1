@@ -6,8 +6,6 @@ Functions:
     - upload_to_psql : Uploads data to the GCP Cloud SQL PostgreSQL database.
 """
 
-# TODO : CLOSE LA CONNECTION AVEC LA DATABASE PARCE QUE CA S'UPDATE H24, BONJOUR LA FACTURE GOOGLE
-
 
 import logging
 
@@ -49,11 +47,11 @@ def conn_to_psql():
             "postgresql+pg8000://",
             creator=getconn_SQL,
         )
-        logging.info("Connection successfull !")
+        logging.info("Connection successfull!")
     except:
-        logging.warning("Connection to GCP database failed")
+        logging.warning("Connection to GCP database failed!")
         
-    return pool
+    return pool, connector
 
 
 def upload_to_psql(pool):
@@ -71,3 +69,13 @@ def upload_to_psql(pool):
         logging.info("Data inserted.")
     print("SQL query result : \n")
     print(result)
+
+def close_conn_to_sql(pool, connector):
+    """Closes the connection to the GCP Cloud SQL PostgreSQL database"""
+    
+    logging.info("Closing connection to database...")
+    
+    connector.close() # clean up the Connector object only used to authenticate the user
+    pool.dispose() # close the database connections managed by the connection pool
+    
+    logging.info("Connection closed.")

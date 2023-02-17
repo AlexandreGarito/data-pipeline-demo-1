@@ -19,6 +19,7 @@ import requests
 from modules.gcp_interactions.secret_manager import get_secret
 
 
+
 PROJECT_ID = os.environ["PROJECT_ID"]
 FMI_API_KEY = get_secret(PROJECT_ID, "FMI_API_KEY")
 FINNH_API_KEY = get_secret(PROJECT_ID, "FINNH_API_KEY")
@@ -26,7 +27,9 @@ URL_SCREENER = "https://financialmodelingprep.com/api/v3/stock-screener"
 
 
 
-
+def cacacoco():
+    print("cacacoco")
+    return 43
 
 def stock_screener_call(ROW_LIMIT):
     """stock_screener_call filters for the companies tickers and get general data about each company."""
