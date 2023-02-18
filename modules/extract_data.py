@@ -9,14 +9,15 @@ Functions:
 """
 
 
-
 import json
 import logging
 import os
 from datetime import date, timedelta
 import pandas as pd
 import requests
-from modules.gcp_interactions.secret_manager import get_secret
+from modules.gcp_interactions import get_secret
+
+
 
 
 
@@ -26,10 +27,6 @@ FINNH_API_KEY = get_secret(PROJECT_ID, "FINNH_API_KEY")
 URL_SCREENER = "https://financialmodelingprep.com/api/v3/stock-screener"
 
 
-
-def cacacoco():
-    print("cacacoco")
-    return 43
 
 def stock_screener_call(ROW_LIMIT):
     """stock_screener_call filters for the companies tickers and get general data about each company."""
@@ -198,7 +195,7 @@ def write_data_to_csv(final_data):
     
     logging.info("Writing final data to csv...")
     
-    name_final_data_csv = "final_data.csv"
+    name_final_data_csv = "data/final_data.csv"
     df_final_data = pd.DataFrame(final_data)
     df_final_data.to_csv(name_final_data_csv)
     

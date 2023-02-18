@@ -27,7 +27,7 @@ def dashboard():
     scaler = MinMaxScaler(feature_range=(0, 1))
     camera = dict(eye=dict(x=0, y=-2.5, z=0.1))
 
-    df = pd.read_csv("final_data.csv")
+    df = pd.read_csv("data/final_data.csv")
     df["normalized_sentiment"] = scaler.fit_transform(df[["yest_twitter_mean_sentiment_score"]])
     df["normalized_sentiment"] = df["normalized_sentiment"].round(2)
 
@@ -467,4 +467,4 @@ def dashboard():
             return scatter_data
 
 
-    app.run_server(debug=True)
+    app.run_server(debug=False)

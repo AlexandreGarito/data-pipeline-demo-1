@@ -1,17 +1,17 @@
 import logging
 import traceback
-from modules.extract_data.extract_data_m import (
+from modules.extract_data import (
     stock_screener_call,
     add_fte_call,
     add_yest_soc_sent,
     write_data_to_csv,
 )
-from modules.update_psql.update_psql_m import (
+from modules.update_psql import (
     conn_to_psql,
     upload_to_psql,
     close_conn_to_sql,
 )
-from modules.dash_plotly_dashboard.dash_plotly_dashboard_m import dashboard
+from modules.dash_plotly_dashboard import dashboard
 
 
 def app():

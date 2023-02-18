@@ -1,3 +1,6 @@
+"""Module for all the interactions with GCP for the project"""
+
+
 from google.cloud import secretmanager
 
 

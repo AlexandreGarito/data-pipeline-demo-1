@@ -13,7 +13,9 @@ import os
 from google.cloud.sql.connector import Connector
 import pandas as pd
 import sqlalchemy
-from modules.gcp_interactions.secret_manager import get_secret
+from modules.gcp_interactions import get_secret
+
+
 
 
 PROJECT_ID = os.environ["PROJECT_ID"]
@@ -59,7 +61,7 @@ def upload_to_psql(pool):
     
     logging.info("Uploading data to GCP database...")
     
-    df_final_data = pd.read_csv("final_data.csv")
+    df_final_data = pd.read_csv("data/final_data.csv")
     df_final_data.to_sql(SQL_DB_TABLE_NAME1, pool, if_exists="replace", index=False)
 
     # Verify data has been inserted

@@ -770,3 +770,69 @@ TypeError: stock_screener_call() missing 1 required positional argument: 'ROW_LI
 2023-02-17 16:24:24,328 - INFO - Closing connection to database...
 2023-02-17 16:24:24,329 - INFO - Connection closed.
 2023-02-17 16:24:24,330 - INFO - Dash Plotly dashboard started.
+2023-02-17 19:38:54,534 - INFO - APP STARTED
+2023-02-17 19:38:54,535 - INFO - Stock screener call started.
+2023-02-17 19:38:55,310 - INFO - Adding full time employees started.
+2023-02-17 19:38:57,731 - INFO - Adding yesterday's twitter social sentiment started.
+2023-02-17 19:38:58,378 - INFO - Writing final data to csv...
+2023-02-17 19:38:58,383 - INFO - Final data written to final_data.csv.
+2023-02-17 19:38:58,383 - INFO - Connecting to database...
+2023-02-17 19:38:58,439 - INFO - Connection successfull!
+2023-02-17 19:38:58,440 - INFO - Uploading data to GCP database...
+2023-02-17 19:38:59,287 - INFO - Data inserted.
+2023-02-17 19:38:59,298 - INFO - Closing connection to database...
+2023-02-17 19:38:59,300 - INFO - Connection closed.
+2023-02-17 19:38:59,300 - INFO - Dash Plotly dashboard started.
+2023-02-17 19:38:59,312 - INFO - Dash is running on http://127.0.0.1:8050/
+
+2023-02-17 19:39:02,597 - INFO - APP STARTED
+2023-02-17 19:39:02,598 - INFO - Stock screener call started.
+2023-02-17 19:39:03,427 - INFO - Adding full time employees started.
+2023-02-17 19:39:05,228 - INFO - Adding yesterday's twitter social sentiment started.
+2023-02-17 19:39:06,891 - INFO - Writing final data to csv...
+2023-02-17 19:39:06,895 - INFO - Final data written to final_data.csv.
+2023-02-17 19:39:06,895 - INFO - Connecting to database...
+2023-02-17 19:39:06,949 - INFO - Connection successfull!
+2023-02-17 19:39:06,949 - INFO - Uploading data to GCP database...
+2023-02-17 19:39:07,879 - INFO - Data inserted.
+2023-02-17 19:39:07,891 - INFO - Closing connection to database...
+2023-02-17 19:39:07,893 - INFO - Connection closed.
+2023-02-17 19:39:07,893 - INFO - Dash Plotly dashboard started.
+2023-02-17 19:40:05,315 - INFO - APP STARTED
+2023-02-17 19:40:05,316 - INFO - Stock screener call started.
+2023-02-17 19:40:06,173 - INFO - Adding full time employees started.
+2023-02-17 19:40:07,925 - INFO - Adding yesterday's twitter social sentiment started.
+2023-02-17 19:40:09,525 - INFO - Writing final data to csv...
+2023-02-17 19:40:09,531 - INFO - Final data written to final_data.csv.
+2023-02-17 19:40:09,532 - INFO - Connecting to database...
+2023-02-17 19:40:09,591 - INFO - Connection successfull!
+2023-02-17 19:40:09,591 - INFO - Uploading data to GCP database...
+2023-02-17 19:40:10,445 - INFO - Data inserted.
+2023-02-17 19:40:10,456 - INFO - Closing connection to database...
+2023-02-17 19:40:10,458 - INFO - Connection closed.
+2023-02-17 19:40:10,458 - INFO - Dash Plotly dashboard started.
+2023-02-17 19:47:38,798 - INFO - APP STARTED
+2023-02-17 19:47:38,798 - INFO - Stock screener call started.
+2023-02-17 19:47:39,647 - INFO - Adding full time employees started.
+2023-02-17 19:47:41,121 - INFO - Adding yesterday's twitter social sentiment started.
+2023-02-17 19:47:41,816 - INFO - Writing final data to csv...
+2023-02-17 19:47:41,821 - INFO - Final data written to final_data.csv.
+2023-02-17 19:47:41,822 - INFO - Connecting to database...
+2023-02-17 19:47:41,890 - INFO - Connection successfull!
+2023-02-17 19:47:41,891 - INFO - Uploading data to GCP database...
+2023-02-17 19:47:42,768 - INFO - Data inserted.
+2023-02-17 19:47:42,782 - INFO - Closing connection to database...
+2023-02-17 19:47:42,784 - INFO - Connection closed.
+2023-02-17 19:47:42,785 - INFO - Dash Plotly dashboard started.
+2023-02-18 01:12:23,362 - INFO - APP STARTED
+2023-02-18 01:12:23,362 - INFO - Stock screener call started.
+2023-02-18 01:16:48,398 - INFO - APP STARTED
+2023-02-18 01:16:48,398 - INFO - Stock screener call started.
+2023-02-18 01:19:50,029 - INFO - APP STARTED
+2023-02-18 01:19:50,029 - INFO - Stock screener call started.
+2023-02-18 01:19:50,838 - INFO - Adding full time employees started.
+2023-02-18 01:24:13,414 - INFO - APP STARTED
+2023-02-18 01:24:13,414 - INFO - Stock screener call started.
+2023-02-18 01:24:14,346 - INFO - Adding full time employees started.
+2023-02-18 03:04:46,634 - INFO - APP STARTED
+2023-02-18 03:04:46,634 - INFO - Stock screener call started.
