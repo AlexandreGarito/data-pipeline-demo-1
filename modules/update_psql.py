@@ -50,8 +50,8 @@ def conn_to_psql():
             creator=getconn_SQL,
         )
         logging.info("Connection successfull!")
-    except:
-        logging.warning("Connection to GCP database failed!")
+    except Exception as e:
+        logging.warning(f"Connection to GCP database failed!\nThis exception was raised : {e}")
         
     return pool, connector
 
