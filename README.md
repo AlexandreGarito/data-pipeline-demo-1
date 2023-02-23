@@ -5,8 +5,7 @@ The project is to create a demonstration micro data pipeline and web visualizati
 <br>
 
 My goal is to showcase junior-level knowledge with the following tools :
-- Python ![image]({https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue})
-
+- Python
 - Airflow
 - Jenkins
 - Docker
