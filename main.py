@@ -22,6 +22,7 @@ ROW_LIMIT = 4
 
 def app():
     """Global app"""
+    
     # Logging configuration
     logging.basicConfig(
         # filename="logs/app.log",

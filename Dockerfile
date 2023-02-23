@@ -21,4 +21,4 @@ EXPOSE 8050
 # ENV PROJECT_ID = my-project-id-here
 # ENV GOOGLE_APPLICATION_CREDENTIALS = mycredentials
 
-CMD ["sh", "-c", "python --version && python main.py"]
+CMD ["sh", "-c", "python --version && ls && python main.py"]
