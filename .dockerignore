@@ -2,3 +2,7 @@ __pycache__
 .pytest_cache
 .vscode
 venv-sde
+logs
+profile
+*.pyc
+*.csv

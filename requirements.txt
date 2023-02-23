@@ -9,4 +9,5 @@ pandas
 plotly
 requests
 scikit-learn
-sqlalchemy
+sqlalchemy<2.0
+pg8000
