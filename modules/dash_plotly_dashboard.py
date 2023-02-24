@@ -478,4 +478,4 @@ def dashboard():
             return scatter_data
 
 
-    app.run_server(debug=False)
+    app.run_server(host='0.0.0.0', port=8050)
