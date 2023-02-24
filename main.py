@@ -58,7 +58,6 @@ def app():
         dashboard()
 
     except Exception as e:
-        pass
         logging.critical(e)
         logging.critical(traceback.format_exc())
 
