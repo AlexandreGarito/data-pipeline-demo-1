@@ -33,28 +33,32 @@ def app():
     logging.info("APP STARTED")
 
     try:
-        # API calls data extraction & transformation
-        screener_resp_tech, screener_resp_com = screener_call(row_limit=ROW_LIMIT)
-        tickers_list, filtered_screener = screener_transf(
-            row_limit=ROW_LIMIT, screener_resp_tech=screener_resp_tech, screener_resp_com=screener_resp_com
-        )
+        # # API calls data extraction & transformation
+        # screener_resp_tech, screener_resp_com = screener_call(row_limit=ROW_LIMIT)
+        # tickers_list, filtered_screener = screener_transf(
+        #     row_limit=ROW_LIMIT, screener_resp_tech=screener_resp_tech, screener_resp_com=screener_resp_com
+        # )
 
-        employees_n_list = fte_call(tickers_list)
-        added_fte = add_fte(employees_n_list, filtered_screener)
+        # employees_n_list = fte_call(tickers_list)
+        # added_fte = add_fte(employees_n_list, filtered_screener)
 
-        d_list_sentiment = yest_sent_call(tickers_list)
-        final_data = add_yest_sent(added_fte, d_list_sentiment)
-        write_data_to_csv(final_data)
+        # d_list_sentiment = yest_sent_call(tickers_list)
+        # final_data = add_yest_sent(added_fte, d_list_sentiment)
+        # write_data_to_csv(final_data)
 
-        # Connect to database, upload data, and close the connection.
-        pool, connector = conn_to_psql()
-        upload_to_psql(pool)
-        close_conn_to_sql(pool, connector)
+        # # Connect to database, upload data, and close the connection.
+        # pool, connector = conn_to_psql()
+        # upload_to_psql(pool)
+        # close_conn_to_sql(pool, connector)
 
         # Generate the dash & plotly web dashboard
-        dashboard()
+        try:
+            dashboard()
+        except:
+            pass
 
     except Exception as e:
+        pass
         logging.critical(e)
         logging.critical(traceback.format_exc())
 
@@ -62,6 +66,7 @@ def app():
 
 
 if __name__ == "__main__":
+    
     app()
 
 

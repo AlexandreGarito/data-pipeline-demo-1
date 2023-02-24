@@ -323,10 +323,14 @@ def dashboard():
     )
     def update_highlighted_point(hoverData, tab):
         if tab == "tab-3d-scatter":
-            company_name = hoverData["points"][0]["label"]
 
-            highlighted_df = df[df["companyName"] == company_name]
-
+            try:
+                company_name = hoverData["points"][0]["label"]
+                highlighted_df = df[df["companyName"] == company_name]
+            except:
+                company_name = "dummy"
+                highlighted_df = pd.DataFrame([])
+            
             scatter_data = px.scatter_3d(
                 highlighted_df,
                 x="fullTimeEmployees",
@@ -388,13 +392,21 @@ def dashboard():
             )
 
             scatter_data.add_traces(not_highlighted_data["data"])
-
-            return scatter_data
+            
+            try:
+                return scatter_data
+            except:
+                return not_highlighted_data
+                
 
         elif tab == "tab-2d-scatter":
-            company_name = hoverData["points"][0]["label"]
-
-            highlighted_df = df[df["companyName"] == company_name]
+            
+            try:
+                company_name = hoverData["points"][0]["label"]
+                highlighted_df = df[df["companyName"] == company_name]
+            except:
+                company_name = "dummy"
+                highlighted_df = pd.DataFrame([])
 
             scatter_data = (
                 px.scatter(
