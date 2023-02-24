@@ -1,0 +1,6 @@
+,symbol,companyName,marketCap,beta,fullTimeEmployees,yest_twitter_positive_mentions,yest_twitter_negative_mentions,yest_twitter_mean_sentiment_score
+0,AAPL,Apple Inc.,2363791826534,1.277894,164000,1818,1475,-0.029101576615821453
+1,MSFT,Microsoft Corporation,1896456899249,0.0,221000,707,771,-0.11055351020564312
+2,GOOG,Alphabet Inc.,1165313518841,1.085774,186779,386,561,-0.2632810169757574
+3,NVDA,NVIDIA Corporation,589706862489,0.0,22473,1927,3662,-0.3725682706366354
+4,META,"Meta Platforms, Inc.",446037767020,1.220013,87314,215,336,-0.31020042498651496

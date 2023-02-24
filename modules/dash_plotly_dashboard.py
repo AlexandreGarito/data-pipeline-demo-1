@@ -322,11 +322,17 @@ def dashboard():
         Input("tabs-scatter", "value"),
     )
     def update_highlighted_point(hoverData, tab):
+        
         if tab == "tab-3d-scatter":
-            company_name = hoverData["points"][0]["label"]
 
-            highlighted_df = df[df["companyName"] == company_name]
-
+            # Exception handling below is the only way I found to preserve the interactivity of the charts.
+            try:
+                company_name = hoverData["points"][0]["label"]
+                highlighted_df = df[df["companyName"] == company_name]
+            except (KeyError, TypeError):
+                company_name = "dummy"
+                highlighted_df = df
+            
             scatter_data = px.scatter_3d(
                 highlighted_df,
                 x="fullTimeEmployees",
@@ -388,13 +394,18 @@ def dashboard():
             )
 
             scatter_data.add_traces(not_highlighted_data["data"])
-
+            
             return scatter_data
 
         elif tab == "tab-2d-scatter":
-            company_name = hoverData["points"][0]["label"]
-
-            highlighted_df = df[df["companyName"] == company_name]
+            
+            # Exception handling below is the only way I found to preserve the interactivity of the charts.
+            try:
+                company_name = hoverData["points"][0]["label"]
+                highlighted_df = df[df["companyName"] == company_name]
+            except (KeyError, TypeError):
+                company_name = "dummy"
+                highlighted_df = df
 
             scatter_data = (
                 px.scatter(

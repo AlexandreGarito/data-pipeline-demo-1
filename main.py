@@ -17,12 +17,12 @@ from modules.update_psql import (
 from modules.dash_plotly_dashboard import dashboard
 
 
-ROW_LIMIT = 4
+ROW_LIMIT = 5
 
 
 def app():
     """Global app"""
-    
+
     # Logging configuration
     logging.basicConfig(
         # filename="logs/app.log",
@@ -36,7 +36,9 @@ def app():
         # API calls data extraction & transformation
         screener_resp_tech, screener_resp_com = screener_call(row_limit=ROW_LIMIT)
         tickers_list, filtered_screener = screener_transf(
-            row_limit=ROW_LIMIT, screener_resp_tech=screener_resp_tech, screener_resp_com=screener_resp_com
+            row_limit=ROW_LIMIT,
+            screener_resp_tech=screener_resp_tech,
+            screener_resp_com=screener_resp_com,
         )
 
         employees_n_list = fte_call(tickers_list)
@@ -52,6 +54,7 @@ def app():
         close_conn_to_sql(pool, connector)
 
         # Generate the dash & plotly web dashboard
+
         dashboard()
 
     except Exception as e:
@@ -59,9 +62,5 @@ def app():
         logging.critical(traceback.format_exc())
 
 
-
-
 if __name__ == "__main__":
     app()
-
-
