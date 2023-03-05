@@ -11,3 +11,4 @@ requests
 scikit-learn
 sqlalchemy<2.0
 pg8000
+pytest
