@@ -1,12 +1,13 @@
-FROM python:3.9.5
+FROM apache/airflow:2.2.3-python3.8
 
 LABEL name="sde"
 LABEL maintainer="Alexandre Garito"
-LABEL description="Docker image for superdataexplorer.com main script"
+LABEL description="Docker image for superdataexplorer.com main dags"
 LABEL version="1.0"
 
 WORKDIR /app
 COPY . .
+COPY dags /opt/airflow/dags
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
@@ -22,4 +23,7 @@ EXPOSE 8050
 # ENV PROJECT_ID = my-project-id-here
 # ENV GOOGLE_APPLICATION_CREDENTIALS = mycredentials
 
-CMD ["sh", "-c", "python --version && ls && python main.py"]
+# Start the Airflow webserver and scheduler
+CMD ["sh", "-c", "python --version && ls"]
+CMD ["airflow", "webserver", "-p", "8080"]
+CMD ["airflow", "scheduler"]
