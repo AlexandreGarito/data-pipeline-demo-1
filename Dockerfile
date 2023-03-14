@@ -11,7 +11,6 @@ COPY dags /opt/airflow/dags
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN pytest
 
 EXPOSE 8050
 
@@ -24,6 +23,4 @@ EXPOSE 8050
 # ENV GOOGLE_APPLICATION_CREDENTIALS = mycredentials
 
 # Start the Airflow webserver and scheduler
-CMD ["sh", "-c", "python --version && ls"]
-CMD ["airflow", "webserver", "-p", "8080"]
-CMD ["airflow", "scheduler"]
+CMD ["sh", "-c", "pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
