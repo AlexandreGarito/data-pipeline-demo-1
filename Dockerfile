@@ -8,7 +8,9 @@ LABEL version="1.0"
 WORKDIR /app
 COPY . .
 COPY dags /opt/airflow/dags
+COPY my_entrypoint.sh /my_entrypoint.sh
 
+RUN chmod +x /my_entrypoint.sh
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
@@ -25,6 +27,9 @@ EXPOSE 8050
 
 # Start the Airflow webserver and scheduler
 # CMD ["sh", "-c", "pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
-ENTRYPOINT ["python"]
-CMD ["pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
-# CMD ["pytest tests; python --version; echo $PROJECT_ID; ls; airflow webserver -p 8080; airflow scheduler"]
+
+# Copy your custom entrypoint script
+
+
+# Set the custom entrypoint, using dumb-init to handle proper signal propagation
+ENTRYPOINT ["/usr/bin/dumb-init", "--", "/my_entrypoint.sh"]
