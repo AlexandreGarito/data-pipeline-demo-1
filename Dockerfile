@@ -10,7 +10,7 @@ COPY . .
 COPY dags /opt/airflow/dags
 COPY my_entrypoint.sh /my_entrypoint.sh
 
-RUN chmod +x /my_entrypoint.sh
+# RUN chmod +x /my_entrypoint.sh
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
