@@ -12,7 +12,7 @@ COPY dags /opt/airflow/dags
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# EXPOSE 8050
+EXPOSE 8050
 
 # If the container runs within GCP :
 # - PROJECT_ID is set manually as an environment variable from the GCP Cloud Run service creation.
