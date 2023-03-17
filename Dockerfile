@@ -1,4 +1,4 @@
-FROM apache/airflow:2.2.3-python3.8
+FROM apache/airflow:2.2.3-python3.9
 
 LABEL name="sde"
 LABEL maintainer="Alexandre Garito"
@@ -25,6 +25,6 @@ EXPOSE 8050
 
 # Start the Airflow webserver and scheduler
 # CMD ["sh", "-c", "pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
-ENTRYPOINT ["/bin/bash", "-c"]
-# CMD ["pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
-CMD ["pytest tests; python --version; echo $PROJECT_ID; ls; airflow webserver -p 8080; airflow scheduler"]
+ENTRYPOINT ["python"]
+CMD ["pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
+# CMD ["pytest tests; python --version; echo $PROJECT_ID; ls; airflow webserver -p 8080; airflow scheduler"]
