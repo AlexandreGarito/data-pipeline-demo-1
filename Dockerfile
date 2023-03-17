@@ -25,4 +25,4 @@ EXPOSE 8050
 
 # Start the Airflow webserver and scheduler
 # CMD ["sh", "-c", "pytest tests && python --version && echo $PROJECT_ID && ls && airflow webserver -p 8080 && airflow scheduler"]
-CMD sh -c "(pytest tests; python --version; echo \$PROJECT_ID; ls; airflow webserver -p 8080 &) && (airflow scheduler & wait)"
+CMD "(pytest tests; python --version; echo \$PROJECT_ID; ls; airflow webserver -p 8080 &) && (airflow scheduler & wait)"
