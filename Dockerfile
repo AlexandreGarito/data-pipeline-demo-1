@@ -24,4 +24,4 @@ EXPOSE 8050
 # ENV GOOGLE_APPLICATION_CREDENTIALS = mycredentials
 
 # Start the Airflow webserver and scheduler
-CMD ["bash", "-c", "airflow webserver -p 8080 && airflow scheduler"]
+CMD ["bash", "-c", "airflow webserver -p 8080 & airflow scheduler"]
