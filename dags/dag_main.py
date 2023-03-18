@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
+
 from main import (
     screener_call,
     screener_transf,
@@ -25,6 +27,12 @@ default_args = {
 }
 
 with DAG("my_dag", default_args=default_args, schedule_interval="0 2 * * *") as dag:
+
+    run_bash_entrypoint = BashOperator(
+        task_id="run_my_entrypoint",
+        bash_command="bash my_entrypoint.sh",
+    )
+
 
     screener_resp_tech, screener_resp_com = PythonOperator(
         task_id="screener_call",
@@ -102,8 +110,7 @@ with DAG("my_dag", default_args=default_args, schedule_interval="0 2 * * *") as 
         task_id="dashboard",
         python_callable=dashboard,
     )
-
-    screener_resp_tech, screener_resp_com >> tickers_list
+    run_bash_entrypoint >> screener_resp_tech, screener_resp_com >> tickers_list
     tickers_list >> employees_n_list >> added_fte >> final_data >> write_data
     tickers_list >> d_list_sentiment >> final_data
     write_data >> pool >> upload_to_psql >> close_conn >> generate_dashboard
