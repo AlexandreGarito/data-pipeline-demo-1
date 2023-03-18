@@ -17,7 +17,7 @@ from modules.update_psql import (
 from modules.dash_plotly_dashboard import dashboard
 
 
-ROW_LIMIT = 20
+ROW_LIMIT = 3
 
 
 def app():
