@@ -45,7 +45,7 @@ def dashboard():
                     "padding-left": "20px",
                     "padding-bottom": "20px",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#77A4D1",
                     "font-weight": "bold",
                     "font-size": 25,
@@ -67,7 +67,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 24, 
@@ -83,7 +83,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -102,7 +102,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -115,7 +115,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -136,7 +136,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -150,7 +150,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -163,7 +163,7 @@ def dashboard():
                     "padding-top": "5px",
                     "padding-left": "20px",
                     "backgroundColor": "#1F2630",
-                    "font-family": "league spartan",
+                    "font-family": "lato",
                     "color": "#43505b",
                     "font-weight": "bold",
                     "font-size": 10,
