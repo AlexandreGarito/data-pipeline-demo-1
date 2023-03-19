@@ -172,8 +172,11 @@ def yest_sent_call(tickers_list):
         json_data = response_finnhub.json()
 
         # Sometimes companies don't have twitter mentions
-        if json_data["twitter"]:
-            twitter_data = json_data["twitter"]
+        # logging.info(f"json_data : {json_data}")
+        # FIXME: Following Twitter API not being free anymore, Finnhub.com ceased to provide twitter data
+        # FIXME: so, switching to reddit, even though the data is very scarce
+        if json_data["reddit"]:
+            twitter_data = json_data["reddit"]
         if twitter_data:
             sentiment_summary = {
                 "yest_twitter_positive_mentions": sum(
