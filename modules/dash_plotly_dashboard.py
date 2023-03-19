@@ -284,7 +284,7 @@ def dashboard():
                             font_size=10,
                             font_color="#ffffff",
                             paper_bgcolor="#252E3F",
-                            font_family="League Spartan",
+                            font_family="Lato",
                         )
                         .update_traces(
                             hovertemplate=" <b>%{label}</b><br><br>Market Capitalization : %{value}<extra></extra>"
@@ -318,7 +318,7 @@ def dashboard():
                             font_size=10,
                             font_color="#ffffff",
                             paper_bgcolor="#252E3F",
-                            font_family="League Spartan",
+                            font_family="Lato",
                         )
                         .update_traces(
                             hovertemplate=" <b>%{x}</b><br><br>Market Capitalization : %{y}<extra></extra>"
@@ -362,7 +362,7 @@ def dashboard():
                             font_size=10,
                             font_color="#ffffff",
                             paper_bgcolor="#252E3F",
-                            font_family="League Spartan",
+                            font_family="Lato",
                         ),
                     )
                 ]
@@ -399,7 +399,7 @@ def dashboard():
                             font_size=10,
                             font_color="#ffffff",
                             paper_bgcolor="#252E3F",
-                            font_family="League Spartan",
+                            font_family="Lato",
                         )
                         .update_yaxes(tickprefix="$"),
                     )
@@ -449,7 +449,7 @@ def dashboard():
                 font_size=10,
                 font_color="#ffffff",
                 paper_bgcolor="#252E3F",
-                font_family="League Spartan",
+                font_family="Lato",
             )
 
             scatter_data["data"][0]["marker"]["color"] = "green"
@@ -481,7 +481,7 @@ def dashboard():
                 font_size=10,
                 font_color="#ffffff",
                 paper_bgcolor="#252E3F",
-                font_family="League Spartan",
+                font_family="Lato",
             )
 
             scatter_data.add_traces(not_highlighted_data["data"])
@@ -524,7 +524,7 @@ def dashboard():
                     font_size=10,
                     font_color="#ffffff",
                     paper_bgcolor="#252E3F",
-                    font_family="League Spartan",
+                    font_family="Lato",
                 )
                 .update_yaxes(tickprefix="$")
             )
@@ -559,7 +559,7 @@ def dashboard():
                     font_size=10,
                     font_color="#ffffff",
                     paper_bgcolor="#252E3F",
-                    font_family="League Spartan",
+                    font_family="Lato",
                 )
                 .update_yaxes(tickprefix="$")
             )
