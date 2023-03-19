@@ -52,14 +52,15 @@ def dashboard():
                 },
             ),
             html.H3(
-                "Public Tech Company Study",
+                """github repo : https://github.com/AlexandreGarito/data-pipeline-demo-1""",
                 style={
                     "textAlign": "center",
                     "backgroundColor": "#1F2630",
                     "font-family": "league spartan",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 35,
+                    "font-size": 20,
+                    "padding": "15px 100px 0px 100px",
                 },
             ),
             html.H3(
