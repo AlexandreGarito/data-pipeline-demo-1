@@ -63,7 +63,30 @@ def dashboard():
                 },
             ),
             html.H3(
-                "data is updated daily",
+                """The objective of this web app is to demonstrate by ability to extract, transform, load and show in a 
+                dashboard a simple set of API data updated daily. This serves as a small "A to Z project" in my data 
+                engineering path where I get to experience the constraints of using data from the ETL phase all the way to 
+                its use in a pseudo-final product, including some DevOps processes and tools such as CI/CD, Docker and 
+                Airflow.""",
+                style={
+                    "textAlign": "left",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 13,
+                    "padding": "15px 0px 0px 20px",
+                },
+            ),
+                        html.H3(
+                """The pipeline is coded in Python.
+                Data is extracted with API requests, transformed using pandas, loaded into a GCP Cloud SQL PostgreSQL 
+                database, and showcased using the Dash-Plotly web framework (based on Flask).
+                The app is run in a Docker container on Google Cloud Platform (GCP). With GCP Cloud Build, the code is 
+                automatically pulled from the github repo with each new commit, built as a Docker image, and the container 
+                deployed on GCP Cloud Run. At the start of the container, tests are run with pytest, then the data 
+                extraction scripts are called, then the Dash-Plotly app and webserver is called.
+                Each day at 2AM, a GCP Cloud Composer (managed Airflow) task reboots the container to update daily data.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -264,7 +287,7 @@ def dashboard():
                             labels=dict(
                                 companyName="Company Name",
                                 fullTimeEmployees="Full Time Employees",
-                                normalized_sentiment="Twitter Sentiment",
+                                normalized_sentiment="Reddit Sentiment",
                                 marketCap="Market Capitalization ($)",
                             ),
                         ).update_layout(
@@ -298,7 +321,7 @@ def dashboard():
                             labels=dict(
                                 companyName="Company Name",
                                 fullTimeEmployees="Full Time Employees",
-                                normalized_sentiment="Twitter Sentiment",
+                                normalized_sentiment="Reddit Sentiment",
                                 marketCap="Market Capitalization ($)",
                             ),
                         )
@@ -351,7 +374,7 @@ def dashboard():
                 labels=dict(
                     companyName="Company Name",
                     fullTimeEmployees="Full Time Employees",
-                    normalized_sentiment="Twitter Sentiment",
+                    normalized_sentiment="Reddit Sentiment",
                     marketCap="Market Capitalization ($)",
                 ),
             ).update_layout(
@@ -383,7 +406,7 @@ def dashboard():
                 labels=dict(
                     companyName="Company Name",
                     fullTimeEmployees="Full Time Employees",
-                    normalized_sentiment="Twitter Sentiment",
+                    normalized_sentiment="Reddit Sentiment",
                     marketCap="Market Capitalization ($)",
                 ),
             ).update_layout(
@@ -425,7 +448,7 @@ def dashboard():
                     labels=dict(
                         companyName="Company Name",
                         fullTimeEmployees="Full Time Employees",
-                        normalized_sentiment="Twitter Sentiment",
+                        normalized_sentiment="Reddit Sentiment",
                         marketCap="Market Capitalization ($)",
                     ),
                 )
@@ -460,7 +483,7 @@ def dashboard():
                     labels=dict(
                         companyName="Company Name",
                         fullTimeEmployees="Full Time Employees",
-                        normalized_sentiment="Twitter Sentiment",
+                        normalized_sentiment="Reddit Sentiment",
                         marketCap="Market Capitalization ($)",
                     ),
                 )
