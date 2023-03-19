@@ -75,7 +75,7 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 20px 0px 20px",
+                    "padding": "15px 100px 0px 100px",
                 },
             ),
                         html.H3(
@@ -94,7 +94,7 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 20px 0px 20px",
+                    "padding": "15px 100px 0px 100px",
                 },
             ),
                         html.H3(
@@ -107,7 +107,7 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 20px 0px 20px",
+                    "padding": "15px 100px 0px 100px",
                 },
             ),
                         html.H3(
@@ -128,7 +128,7 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 20px 0px 20px",
+                    "padding": "15px 100px 0px 100px",
                 },
             ),
                         html.H3(
@@ -142,11 +142,11 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 20px 0px 20px",
+                    "padding": "15px 100px 0px 100px",
                 },
             ),
             html.H3(
-                "Alexandre Garito little data viz demo",
+                "Made by Alexandre Garito",
                 style={
                     "padding-top": "5px",
                     "padding-left": "20px",
