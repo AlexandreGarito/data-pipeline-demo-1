@@ -32,7 +32,29 @@ def dashboard():
     df["normalized_sentiment"] = scaler.fit_transform(df[["yest_twitter_mean_sentiment_score"]])
     df["normalized_sentiment"] = df["normalized_sentiment"].round(2)
 
-    app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+    external_stylesheets = [
+        {
+            "href": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap",
+            "rel": "stylesheet",
+        },
+        {
+            "href": "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",
+            "rel": "stylesheet",
+        },
+        {
+            "href": "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap",
+            "rel": "stylesheet",
+        },
+        {
+            "href": "https://cdnjs.cloudflare.com/ajax/libs/league-spartan/1.0/LeagueSpartan-Bold.otf",
+            "rel": "stylesheet",
+        },
+    ]
+
+    app = Dash(external_stylesheets=external_stylesheets)
+
+    # app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     app.layout = html.Div(
         style={"backgroundColor": "#1F2630"},
@@ -45,7 +67,7 @@ def dashboard():
                     "padding-left": "20px",
                     "padding-bottom": "20px",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#77A4D1",
                     "font-weight": "bold",
                     "font-size": 25,
@@ -67,7 +89,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 24, 
@@ -83,7 +105,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -102,7 +124,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -115,7 +137,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -136,7 +158,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -150,7 +172,7 @@ def dashboard():
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
@@ -163,7 +185,7 @@ def dashboard():
                     "padding-top": "5px",
                     "padding-left": "20px",
                     "backgroundColor": "#1F2630",
-                    "font-family": "lato",
+                    "font-family": "Lato",
                     "color": "#43505b",
                     "font-weight": "bold",
                     "font-size": 10,
