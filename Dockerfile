@@ -8,38 +8,10 @@ LABEL version="1.0"
 WORKDIR /app
 COPY . .
 
-
-
-# FONTS
-
-# Install required packages for downloading fonts
-RUN apt-get update && \
-    apt-get install -y wget unzip fontconfig
-
-# Create directories for the fonts
-RUN mkdir -p /usr/share/fonts/truetype/lato && \
-    mkdir -p /usr/share/fonts/truetype/roboto && \
-
-# Download and install Lato font files
-RUN wget https://fonts.google.com/download?family=Lato -O lato.zip && \
-    unzip lato.zip -d /usr/share/fonts/truetype/lato/ && \
-    rm lato.zip
-
-# Download and install Roboto font files
-RUN wget https://fonts.google.com/download?family=Roboto -O roboto.zip && \
-    unzip roboto.zip -d /usr/share/fonts/truetype/roboto/ && \
-    rm roboto.zip
-
-# Update font cache
-RUN fc-cache -f -v
-
-# Clean up
-RUN apt-get remove -y wget unzip && \
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-
+# Installing fonts
+RUN mkdir -p /usr/share/fonts/truetype/
+RUN install -m644 /fonts/Lato.ttf /usr/share/fonts/truetype/
+RUN install -m644 /fonts/Roboto.ttf /usr/share/fonts/truetype/
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
