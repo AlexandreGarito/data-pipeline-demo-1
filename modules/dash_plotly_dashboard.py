@@ -32,14 +32,7 @@ def dashboard():
     df["normalized_sentiment"] = scaler.fit_transform(df[["yest_twitter_mean_sentiment_score"]])
     df["normalized_sentiment"] = df["normalized_sentiment"].round(2)
 
-
-    external_stylesheets = [
-            "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-    ]
-
-    app = Dash(external_stylesheets=external_stylesheets)
-
-    # app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+    app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     app.layout = html.Div(
         style={"backgroundColor": "#1F2630"},
