@@ -63,7 +63,7 @@ def dashboard():
                 },
             ),
             html.H3(
-                """The objective of this web app is to demonstrate by ability to extract, transform, load and show in a 
+                """The objective of this web app is to demonstrate my ability to extract, transform, load and show in a 
                 dashboard a simple set of API data updated daily. This serves as a small "A to Z project" in my data 
                 engineering path where I get to experience the constraints of using data from the ETL phase all the way to 
                 its use in a pseudo-final product, including some DevOps processes and tools such as CI/CD, Docker and 
@@ -75,7 +75,7 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 0px 0px 20px",
+                    "padding": "15px 20px 0px 20px",
                 },
             ),
                         html.H3(
@@ -94,7 +94,55 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 13,
-                    "padding": "15px 0px 0px 20px",
+                    "padding": "15px 20px 0px 20px",
+                },
+            ),
+                        html.H3(
+                """Free and easily accessible API data was prioritized to facilitate long-term stability of the pipeline,
+                so it mostly focuses on the biggest companies of the Technology field.""",
+                style={
+                    "textAlign": "left",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 13,
+                    "padding": "15px 20px 0px 20px",
+                },
+            ),
+                        html.H3(
+                """My original idea was to use the data of those companies by crossing their market capitalization, their 
+                number of employees, and their daily current job offerings to give a ranking of these companies when it 
+                comes to market cap per employee and market cap per job offer. This would've been a simple approach to find 
+                the "best-capitalized job offers" by company. Unfortunately, I realized that daily job offering data is 
+                quite tricky to obtain, often paid and often incomplete. So I decided to replace it with Twitter social 
+                media sentiment, a data source simple to obtain and also updated daily. Now the dashboard would show the 
+                "best-capitalized workforce + social media sentiment". Since the Twitter API ceased to be freely accessible 
+                in february 2023, I had to switch to Reddit social sentiment, which is unfortunately more scarce than 
+                Twitter sentiment, but it's still the best option I have for now without having to redesign the entire 
+                social sentiment part of the pipeline.""",
+                style={
+                    "textAlign": "left",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 13,
+                    "padding": "15px 20px 0px 20px",
+                },
+            ),
+                        html.H3(
+                """As of march 2023, this dashboard is more about being a working small technical demo than anything else, 
+                but I intend to update and enrich the dashboard with more useful data as I progress on my data engineering 
+                path.""",
+                style={
+                    "textAlign": "left",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "league spartan",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 13,
+                    "padding": "15px 20px 0px 20px",
                 },
             ),
             html.H3(
