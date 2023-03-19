@@ -51,16 +51,27 @@ def dashboard():
                     "font-size": 25,
                 },
             ),
-            html.H3(
-                """github repo : https://github.com/AlexandreGarito/data-pipeline-demo-1""",
+            html.Div(
+                [
+                    html.Span("Github repository : "),
+                    html.A(
+                        "https://github.com/AlexandreGarito/data-pipeline-demo-1",
+                        href="https://github.com/AlexandreGarito/data-pipeline-demo-1",
+                        target="_blank",
+                        style={
+                            "color": "#c2d6ea",
+                            "text-decoration": "underline",
+                        },
+                    ),
+                ],
                 style={
-                    "textAlign": "center",
+                    "textAlign": "left",
                     "backgroundColor": "#1F2630",
                     "font-family": "league spartan",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 20,
-                    "padding": "15px 100px 0px 100px",
+                    "font-size": 24, 
+                    "padding": "15px 0px 0px 20px",
                 },
             ),
             html.H3(
