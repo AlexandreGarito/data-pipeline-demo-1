@@ -13,6 +13,9 @@ RUN mkdir -p /usr/share/fonts/truetype/
 RUN install -m644 fonts/Lato.ttf /usr/share/fonts/truetype/
 RUN install -m644 fonts/Roboto.ttf /usr/share/fonts/truetype/
 
+# Update font cache
+RUN fc-cache -f -v
+
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
