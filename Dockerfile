@@ -19,7 +19,6 @@ RUN apt-get update && \
 # Create directories for the fonts
 RUN mkdir -p /usr/share/fonts/truetype/lato && \
     mkdir -p /usr/share/fonts/truetype/roboto && \
-    mkdir -p /usr/share/fonts/opentype/league-spartan
 
 # Download and install Lato font files
 RUN wget https://fonts.google.com/download?family=Lato -O lato.zip && \
@@ -30,9 +29,6 @@ RUN wget https://fonts.google.com/download?family=Lato -O lato.zip && \
 RUN wget https://fonts.google.com/download?family=Roboto -O roboto.zip && \
     unzip roboto.zip -d /usr/share/fonts/truetype/roboto/ && \
     rm roboto.zip
-
-# Download and install League Spartan font files
-RUN wget https://github.com/theleagueof/league-spartan/raw/master/LeagueSpartan-Bold.otf -O /usr/share/fonts/opentype/league-spartan/LeagueSpartan-Bold.otf
 
 # Update font cache
 RUN fc-cache -f -v
