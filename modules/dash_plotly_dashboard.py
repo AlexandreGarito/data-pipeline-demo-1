@@ -10,6 +10,7 @@ Function:
       3 dimensions scatter.
     - update_highlighted_point : Interactivity when cursor is on a given company point.
 """
+import os
 import logging
 
 import dash_bootstrap_components as dbc
@@ -477,5 +478,6 @@ def dashboard():
 
             return scatter_data
 
-
-    app.run_server(host='0.0.0.0', port=8050)
+    port = int(os.environ.get("PORT", 8050))
+    app.run_server(host="0.0.0.0", port=port)
+    # app.run_server(host='0.0.0.0', port=8050)
