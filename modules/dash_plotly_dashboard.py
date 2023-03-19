@@ -45,19 +45,19 @@ def dashboard():
         style={"backgroundColor": "#1F2630"},
         children=[
             html.Br(),
-            html.H1(
-                "Super Data Explorer",
-                style={
-                    "padding-top": "0px",
-                    "padding-left": "20px",
-                    "padding-bottom": "20px",
-                    "backgroundColor": "#1F2630",
-                    "font-family": "Lato",
-                    "color": "#77A4D1",
-                    "font-weight": "bold",
-                    "font-size": 25,
-                },
-            ),
+            # html.H1(
+            #     "Super Data Explorer",
+            #     style={
+            #         "padding-top": "0px",
+            #         "padding-left": "20px",
+            #         "padding-bottom": "20px",
+            #         "backgroundColor": "#1F2630",
+            #         "font-family": "Lato",
+            #         "color": "#77A4D1",
+            #         "font-weight": "bold",
+            #         "font-size": 25,
+            #     },
+            # ),
             html.Div(
                 [
                     html.Span("Github repository : "),
@@ -72,38 +72,38 @@ def dashboard():
                     ),
                 ],
                 style={
-                    "textAlign": "left",
+                    "textAlign": "center",
                     "backgroundColor": "#1F2630",
                     "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
                     "font-size": 24, 
-                    "padding": "15px 0px 0px 20px",
+                    "padding": "30px 0px 0px 20px",
                 },
             ),
+            html.Br(),
             html.H3(
-                """The objective of this web app is to demonstrate my ability to extract, transform, load and show in a 
-                dashboard a simple set of API data updated daily. This serves as a small "A to Z project" in my data 
-                engineering path where I get to experience the constraints of using data from the ETL phase all the way to 
-                its use in a pseudo-final product, including some DevOps processes and tools such as CI/CD, Docker and 
-                Airflow.""",
+                """The purpose of this project is to demonstrate my ability to extract, transform, load, and display a 
+                simple set of API data in a dashboard that is updated daily. This serves as a small "A to Z project" in 
+                my data engineering journey, where I can gain experience with some tools and challenges involved in data 
+                engineering. This project also involves some DevOps processes and tools, such as CI/CD, Docker, and Airflow.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
                     "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 13,
+                    "font-size": 15,
                     "padding": "15px 100px 0px 100px",
                 },
             ),
-                        html.H3(
-                """The pipeline is coded in Python.
+            html.H3(
+                """The pipeline is coded in Python. The app is run in a Docker container on Google Cloud Platform (GCP). 
                 Data is extracted with API requests, transformed using pandas, loaded into a GCP Cloud SQL PostgreSQL 
-                database, and showcased using the Dash-Plotly web framework (based on Flask).
-                The app is run in a Docker container on Google Cloud Platform (GCP). With GCP Cloud Build, the code is 
-                automatically pulled from the github repo with each new commit, built as a Docker image, and the container 
-                deployed on GCP Cloud Run. At the start of the container, tests are run with pytest, then the data 
+                database, and showcased in this dashboard using the Dash-Plotly web framework (based on Flask). 
+                With GCP Cloud Build, the code is automatically pulled from the github repo with each new commit, 
+                built as a Docker image, and a container is deployed on GCP Cloud Run. At the start of the container, 
+                tests are run with pytest, then the data 
                 extraction scripts are called, then the Dash-Plotly app and webserver is called.
                 Each day at 2AM, a GCP Cloud Composer (managed Airflow) task reboots the container to update daily data.""",
                 style={
@@ -112,11 +112,11 @@ def dashboard():
                     "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 13,
+                    "font-size": 15,
                     "padding": "15px 100px 0px 100px",
                 },
             ),
-                        html.H3(
+            html.H3(
                 """Free and easily accessible API data was prioritized to facilitate long-term stability of the pipeline,
                 so it mostly focuses on the biggest companies of the Technology field.""",
                 style={
@@ -125,18 +125,18 @@ def dashboard():
                     "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 13,
+                    "font-size": 15,
                     "padding": "15px 100px 0px 100px",
                 },
             ),
-                        html.H3(
+            html.H3(
                 """My original idea was to use the data of those companies by crossing their market capitalization, their 
                 number of employees, and their daily current job offerings to give a ranking of these companies when it 
                 comes to market cap per employee and market cap per job offer. This would've been a simple approach to find 
                 the "best-capitalized job offers" by company. Unfortunately, I realized that daily job offering data is 
                 quite tricky to obtain, often paid and often incomplete. So I decided to replace it with Twitter social 
                 media sentiment, a data source simple to obtain and also updated daily. Now the dashboard would show the 
-                "best-capitalized workforce + social media sentiment". Since the Twitter API ceased to be freely accessible 
+                "best-capitalized workforce" social media sentiment by company. Since the Twitter API ceased to be freely accessible 
                 in february 2023, I had to switch to Reddit social sentiment, which is unfortunately more scarce than 
                 Twitter sentiment, but it's still the best option I have for now without having to redesign the entire 
                 social sentiment part of the pipeline.""",
@@ -146,11 +146,11 @@ def dashboard():
                     "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 13,
+                    "font-size": 15,
                     "padding": "15px 100px 0px 100px",
                 },
             ),
-                        html.H3(
+            html.H3(
                 """As of march 2023, this dashboard is more about being a working small technical demo than anything else, 
                 but I intend to update and enrich the dashboard with more useful data as I progress on my data engineering 
                 path.""",
@@ -160,7 +160,7 @@ def dashboard():
                     "font-family": "Lato",
                     "color": "#c2d6ea",
                     "font-weight": "bold",
-                    "font-size": 13,
+                    "font-size": 15,
                     "padding": "15px 100px 0px 100px",
                 },
             ),
@@ -342,7 +342,7 @@ def dashboard():
                             x="fullTimeEmployees",
                             y="normalized_sentiment",
                             z="marketCap",
-                            title="Capitalization per Employee & Sentiment",
+                            title="Market Capitalization & Number of Employees & Yesterday's Reddit Sentiment",
                             color="normalized_sentiment",
                             hover_name="companyName",
                             log_x=True,
@@ -354,7 +354,7 @@ def dashboard():
                             labels=dict(
                                 companyName="Company Name",
                                 fullTimeEmployees="Full Time Employees",
-                                normalized_sentiment="Reddit Sentiment",
+                                normalized_sentiment="Yesterday's Reddit Sentiment",
                                 marketCap="Market Capitalization ($)",
                             ),
                         ).update_layout(
@@ -376,7 +376,7 @@ def dashboard():
                             df,
                             x="fullTimeEmployees",
                             y="marketCap",
-                            title="Capitalization per Employee & Sentiment",
+                            title="Market Capitalization & Full Time Employees & Yesterday's Reddit Sentiment",
                             color="normalized_sentiment",
                             hover_name="companyName",
                             log_x=True,
@@ -388,7 +388,7 @@ def dashboard():
                             labels=dict(
                                 companyName="Company Name",
                                 fullTimeEmployees="Full Time Employees",
-                                normalized_sentiment="Reddit Sentiment",
+                                normalized_sentiment="Yesterday's Reddit Sentiment",
                                 marketCap="Market Capitalization ($)",
                             ),
                         )
@@ -429,7 +429,7 @@ def dashboard():
                 x="fullTimeEmployees",
                 y="normalized_sentiment",
                 z="marketCap",
-                title="Capitalization per Employee & Sentiment",
+                title="Market Capitalization & Full Time Employees & Yesterday's Reddit Sentiment",
                 color="normalized_sentiment",
                 hover_name="companyName",
                 log_x=True,
@@ -441,7 +441,7 @@ def dashboard():
                 labels=dict(
                     companyName="Company Name",
                     fullTimeEmployees="Full Time Employees",
-                    normalized_sentiment="Reddit Sentiment",
+                    normalized_sentiment="Yesterday's Reddit Sentiment",
                     marketCap="Market Capitalization ($)",
                 ),
             ).update_layout(
@@ -461,7 +461,7 @@ def dashboard():
                 x="fullTimeEmployees",
                 y="normalized_sentiment",
                 z="marketCap",
-                title="Capitalization per Employee & Sentiment",
+                title="Market Capitalization & Full Time Employees & Yesterday's Reddit Sentiment",
                 color="normalized_sentiment",
                 hover_name="companyName",
                 log_x=True,
@@ -473,7 +473,7 @@ def dashboard():
                 labels=dict(
                     companyName="Company Name",
                     fullTimeEmployees="Full Time Employees",
-                    normalized_sentiment="Reddit Sentiment",
+                    normalized_sentiment="Yesterday's Reddit Sentiment",
                     marketCap="Market Capitalization ($)",
                 ),
             ).update_layout(
@@ -503,7 +503,7 @@ def dashboard():
                     highlighted_df,
                     x="fullTimeEmployees",
                     y="marketCap",
-                    title="Capitalization per Employee & Sentiment",
+                    title="Market Capitalization & Full Time Employees & Yesterday's Reddit Sentiment",
                     color="normalized_sentiment",
                     hover_name="companyName",
                     log_x=True,
@@ -515,7 +515,7 @@ def dashboard():
                     labels=dict(
                         companyName="Company Name",
                         fullTimeEmployees="Full Time Employees",
-                        normalized_sentiment="Reddit Sentiment",
+                        normalized_sentiment="Yesterday's Reddit Sentiment",
                         marketCap="Market Capitalization ($)",
                     ),
                 )
@@ -538,7 +538,7 @@ def dashboard():
                     not_highlighted_df,
                     x="fullTimeEmployees",
                     y="marketCap",
-                    title="Capitalization per Employee & Sentiment",
+                    title="Market Capitalization & Full Time Employees & Yesterday's Reddit Sentiment",
                     color="normalized_sentiment",
                     hover_name="companyName",
                     log_x=True,
@@ -550,7 +550,7 @@ def dashboard():
                     labels=dict(
                         companyName="Company Name",
                         fullTimeEmployees="Full Time Employees",
-                        normalized_sentiment="Reddit Sentiment",
+                        normalized_sentiment="Yesterday's Reddit Sentiment",
                         marketCap="Market Capitalization ($)",
                     ),
                 )
