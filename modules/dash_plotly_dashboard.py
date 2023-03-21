@@ -164,13 +164,13 @@ def dashboard():
                     "color": "#c2d6ea",
                     "font-weight": "normal",
                     "font-size": 15,
-                    "padding": "15px 100px 0px 100px",
+                    "padding": "15px 100px 30px 100px",
                 },
             ),
             html.H3(
-                f"last data update : {date.today()}",
+                f"Last data update : {date.today()}",
                 style={
-                    "textAlign": "left",
+                    "textAlign": "right",
                     "padding-top": "0px",
                     "padding-left": "0px",
                     "backgroundColor": "#1F2630",
@@ -183,7 +183,7 @@ def dashboard():
             html.H3(
                 "Made by Alexandre Garito",
                 style={
-                    "padding-top": "30px",
+                    "padding-top": "0px",
                     "padding-left": "20px",
                     "backgroundColor": "#1F2630",
                     "font-family": "Lato",
@@ -358,7 +358,7 @@ def dashboard():
                             x="fullTimeEmployees",
                             y="normalized_sentiment",
                             z="marketCap",
-                            title="Market Capitalization & Number of Employees & Last seven days Reddit Sentiment",
+                            title="Market Capitalization & Number of Employees & Last 7 days Reddit Sentiment",
                             color="normalized_sentiment",
                             hover_name="companyName",
                             log_x=True,
@@ -370,7 +370,7 @@ def dashboard():
                             labels=dict(
                                 companyName="Company Name",
                                 fullTimeEmployees="Full Time Employees",
-                                normalized_sentiment="Last seven days Reddit Sentiment",
+                                normalized_sentiment="Last 7 days Reddit Sentiment",
                                 marketCap="Market Capitalization ($)",
                             ),
                         ).update_layout(
@@ -392,7 +392,7 @@ def dashboard():
                             df,
                             x="fullTimeEmployees",
                             y="marketCap",
-                            title="Market Capitalization & Full Time Employees & Reddit Sentiment (last seven days)",
+                            title="Market Capitalization & Full Time Employees & Reddit Sentiment (last 7 days)",
                             color="normalized_sentiment",
                             hover_name="companyName",
                             log_x=True,
@@ -404,7 +404,7 @@ def dashboard():
                             labels=dict(
                                 companyName="Company Name",
                                 fullTimeEmployees="Full Time Employees",
-                                normalized_sentiment="Last seven days Reddit Sentiment",
+                                normalized_sentiment="Last 7 days Reddit Sentiment",
                                 marketCap="Market Capitalization ($)",
                             ),
                         )
@@ -445,7 +445,7 @@ def dashboard():
                 x="fullTimeEmployees",
                 y="normalized_sentiment",
                 z="marketCap",
-                title="Market Capitalization & Full Time Employees & Reddit Sentiment (last seven days)",
+                title="Market Capitalization & Full Time Employees & Reddit Sentiment (last 7 days)",
                 color="normalized_sentiment",
                 hover_name="companyName",
                 log_x=True,
@@ -457,7 +457,7 @@ def dashboard():
                 labels=dict(
                     companyName="Company Name",
                     fullTimeEmployees="Full Time Employees",
-                    normalized_sentiment="Last seven days Reddit Sentiment",
+                    normalized_sentiment="Last 7 days Reddit Sentiment",
                     marketCap="Market Capitalization ($)",
                 ),
             ).update_layout(
@@ -477,7 +477,7 @@ def dashboard():
                 x="fullTimeEmployees",
                 y="normalized_sentiment",
                 z="marketCap",
-                title="Market Capitalization & Full Time Employees & Reddit Sentiment (last seven days)",
+                title="Market Capitalization & Full Time Employees & Reddit Sentiment (last 7 days)",
                 color="normalized_sentiment",
                 hover_name="companyName",
                 log_x=True,
@@ -489,7 +489,7 @@ def dashboard():
                 labels=dict(
                     companyName="Company Name",
                     fullTimeEmployees="Full Time Employees",
-                    normalized_sentiment="Last seven days Reddit Sentiment",
+                    normalized_sentiment="Last 7 days Reddit Sentiment",
                     marketCap="Market Capitalization ($)",
                 ),
             ).update_layout(
@@ -519,7 +519,7 @@ def dashboard():
                     highlighted_df,
                     x="fullTimeEmployees",
                     y="marketCap",
-                    title="Market Capitalization & Full Time Employees & Reddit Sentiment (last seven days)",
+                    title="Market Capitalization & Full Time Employees & Reddit Sentiment (last 7 days)",
                     color="normalized_sentiment",
                     hover_name="companyName",
                     log_x=True,
@@ -531,7 +531,7 @@ def dashboard():
                     labels=dict(
                         companyName="Company Name",
                         fullTimeEmployees="Full Time Employees",
-                        normalized_sentiment="Last seven days Reddit Sentiment",
+                        normalized_sentiment="Last 7 days Reddit Sentiment",
                         marketCap="Market Capitalization ($)",
                     ),
                 )
@@ -554,7 +554,7 @@ def dashboard():
                     not_highlighted_df,
                     x="fullTimeEmployees",
                     y="marketCap",
-                    title="Market Capitalization & Full Time Employees & Reddit Sentiment (last seven days)",
+                    title="Market Capitalization & Full Time Employees & Reddit Sentiment (last 7 days)",
                     color="normalized_sentiment",
                     hover_name="companyName",
                     log_x=True,
@@ -566,7 +566,7 @@ def dashboard():
                     labels=dict(
                         companyName="Company Name",
                         fullTimeEmployees="Full Time Employees",
-                        normalized_sentiment="Last seven days Reddit Sentiment",
+                        normalized_sentiment="Last 7 days Reddit Sentiment",
                         marketCap="Market Capitalization ($)",
                     ),
                 )
