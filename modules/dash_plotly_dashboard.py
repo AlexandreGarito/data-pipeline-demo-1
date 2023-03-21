@@ -84,7 +84,7 @@ def dashboard():
             html.Br(),
             html.H3(
                 """The purpose of this project is to demonstrate my ability to extract, transform, load, and display a 
-                simple set of API data in a dashboard that is updated daily. This serves as a small "A to Z project" in 
+                simple set of API data in a small interactive dashboard that is updated daily. This serves as a small "A to Z project" in 
                 my data engineering journey, where I can gain experience with some tools and challenges involved in data 
                 engineering. This project also involves some DevOps processes and tools, such as CI/CD, Docker, and Airflow.""",
                 style={
@@ -136,10 +136,10 @@ def dashboard():
                 the "best-capitalized job offers" by company. Unfortunately, I realized that daily job offering data is 
                 quite tricky to obtain, often paid and often incomplete. So I decided to replace it with Twitter social 
                 media sentiment, a data source simple to obtain and also updated daily. Now the dashboard would show the 
-                "best-capitalized workforce" social media sentiment by company. Since the Twitter API ceased to be freely accessible 
-                in february 2023, I had to switch to Reddit social sentiment, which is unfortunately more scarce than 
-                Twitter sentiment, but it's still the best option I have for now without having to redesign the entire 
-                social sentiment part of the pipeline.""",
+                "best-capitalized workforce" by company and their social media sentiment. Since the Twitter API ceased to be 
+                freely accessible in february 2023, I had to switch to Reddit social sentiment, which is unfortunately more 
+                scarce than Twitter sentiment, but it's still the best option I have for now without having to redesign the 
+                entire social sentiment part of the pipeline.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -153,7 +153,7 @@ def dashboard():
             html.H3(
                 """As of march 2023, this dashboard is more about being a working small technical demo than anything else, 
                 but I intend to update and enrich the dashboard with more useful data as I progress on my data engineering 
-                path.""",
+                journey.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -167,7 +167,7 @@ def dashboard():
             html.H3(
                 "Made by Alexandre Garito",
                 style={
-                    "padding-top": "5px",
+                    "padding-top": "30px",
                     "padding-left": "20px",
                     "backgroundColor": "#1F2630",
                     "font-family": "Lato",
