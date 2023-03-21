@@ -149,12 +149,12 @@ def add_fte(employees_n_list, filtered_screener):
 
 
 def yest_sent_call(tickers_list):
-    """API call to get yesterday's social twitter sentiment about each company."""
+    """API call to get social media sentiment of the lookback period about each company."""
 
-    logging.info("Adding yesterday's twitter social sentiment started.")
+    logging.info("Adding lookback period's social media sentiment started.")
 
-    yesterday = date.today() - timedelta(days=1)
-
+    # yesterday = date.today() - timedelta(days=1)
+    lookback_period = date.today() - timedelta(days=7)
     d_list_sentiment = []
 
     # Get the sentiment for each ticker
@@ -165,7 +165,7 @@ def yest_sent_call(tickers_list):
         params = {
             "symbol": ticker,
             "token": FINNH_API_KEY,
-            "from": yesterday,
+            "from": lookback_period,
             "to": date.today(),
         }
         response_finnhub = requests.get(URL_FINNHUB, params=params)
