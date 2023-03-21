@@ -14,7 +14,7 @@ import os
 import logging
 from datetime import date, timedelta
 import dash_bootstrap_components as dbc
-import pandas as pdlast_seven_days
+import pandas as pd
 import plotly.express as px
 from dash import dcc, html, Dash
 from dash.dependencies import Input, Output
