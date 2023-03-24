@@ -84,12 +84,13 @@ def dashboard():
             ),
             html.Br(),
             html.H3(
-                """The purpose of this project is to demonstrate my ability to use Python to extract, transform, load, and display a 
-                simple set of API data in a small interactive dashboard that is updated daily. This serves as a small "A to Z project" in 
+                """The purpose of this project is to showcase my ability to employ Python in extracting, transforming, 
+                loading, and displaying a simple set of API data within an interactive dashboard that updates daily. 
+                This serves as a small "A to Z project" in 
                 my data engineering journey, where I can gain experience with some tools and challenges involved in the field. 
                 This project also involves some DevOps processes and tools such as CI/CD, Docker, and Airflow.
-                Even though dashboarding is more of an accessory skill than a core skill in data engineering, I thought it 
-                would still be useful to showcase that my pipeline works all the way to this pseudo-final product.""",
+                Although dashboarding is not a core skill in data engineering, here it serves as an accessory tool that 
+                demonstrates the functionality of this pipeline.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -108,7 +109,8 @@ def dashboard():
                 built as a Docker image, and a container is deployed on GCP Cloud Run. At the start of the container, 
                 unit tests are run with pytest, then the data 
                 extraction scripts are called, then the Dash-Plotly app and web server is called.
-                Each day at 2 AM UTC, a GCP Cloud Composer (managed Airflow) DAG reboots the container to update daily data.""",
+                Every day at 2 AM UTC, a GCP Cloud Composer (using managed Airflow) DAG triggers a container reboot to 
+                refresh the daily data.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -138,11 +140,11 @@ def dashboard():
                 comes to market cap per employee and market cap per job offer. This would've been a simple approach to find 
                 the "best-capitalized job offers" by company. Unfortunately, I realized that daily job offering data is 
                 quite tricky to obtain, often paid and often incomplete. So, I decided to replace it with Twitter social 
-                media sentiment, a data source simple to obtain and also updated daily. Now, the dashboard would show the 
-                "best-capitalized workforce" by company and their social media sentiment. Since the Twitter API ceased to be 
-                freely accessible in February 2023, I had to switch to Reddit social sentiment, which is unfortunately more 
-                scarce than Twitter sentiment, but it's still the best option I have for now without having to redesign the 
-                entire social sentiment part of the pipeline.""",
+                media sentiment, a data source simple to obtain and also updated daily. As a result, the dashboard now 
+                displays the "best-capitalized workforce" for each company, along with their social media sentiment. Since 
+                the Twitter API ceased to be freely accessible in February 2023, I had to switch to Reddit social sentiment, 
+                which is unfortunately more scarce than Twitter sentiment, but it's still the best option I have for now 
+                without having to redesign the entire social sentiment part of the pipeline.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -154,9 +156,8 @@ def dashboard():
                 },
             ),
             html.H3(
-                """As of March 2023, this dashboard is more about being a working small technical demo than anything else, 
-                but I intend to update and enrich the dashboard with more useful data as I progress on my data engineering 
-                journey.""",
+                """As of March 2023, this dashboard primarily serves as a working technical demo; however, I am committed to 
+                update and enhance the dashboard with more valuable data as I advance in my data engineering journey.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
