@@ -101,7 +101,7 @@ def dashboard():
                     "font-size": 15,
                     "padding": "15px 100px 0px 100px",
                 },
-            ),j
+            ),
             html.H3(
                 """The pipeline is coded in Python. The app is run in a Docker container on Google Cloud Platform (GCP). 
                 Data is extracted with API requests, transformed using pandas, loaded into a GCP Cloud SQL PostgreSQL 
