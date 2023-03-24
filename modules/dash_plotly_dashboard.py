@@ -24,8 +24,6 @@ from sklearn.preprocessing import MinMaxScaler
 def dashboard():
     
     logging.info("Dash Plotly dashboard started.")
-    yesterday = date.today() - timedelta(days=1)
-    lookback_period = date.today() - timedelta(days=7)
     
     scaler = MinMaxScaler(feature_range=(0, 1))
     camera = dict(eye=dict(x=0, y=-2.5, z=0.1))
