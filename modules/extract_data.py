@@ -154,7 +154,7 @@ def yest_sent_call(tickers_list):
     logging.info("Adding lookback period's social media sentiment started.")
 
     # yesterday = date.today() - timedelta(days=1)
-    lookback_period = date.today() - timedelta(days=7)
+    lookback_period = date.today() - timedelta(days=15)
     d_list_sentiment = []
 
     # Get the sentiment for each ticker
