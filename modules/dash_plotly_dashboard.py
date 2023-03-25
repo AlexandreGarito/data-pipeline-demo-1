@@ -109,8 +109,8 @@ def dashboard():
                 built as a Docker image, and a container is deployed on GCP Cloud Run. At the start of the container, 
                 unit tests are run with pytest, then the data 
                 extraction scripts are called, then the Dash-Plotly app and web server is called.
-                Every day at 2 AM UTC, a GCP Cloud Composer (using managed Airflow) DAG triggers a container reboot to 
-                refresh the daily data.""",
+                Every day at 2 AM UTC, a GCP Cloud Composer (managed Airflow) DAG triggers a container reboot to 
+                refresh the data.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -123,7 +123,7 @@ def dashboard():
             ),
             html.H3(
                 """Free and easily accessible API data was prioritized to facilitate long-term stability of the pipeline,
-                so it mostly focuses on the biggest companies of the Technology field.""",
+                so it mostly focuses on the biggest companies in the Technology field.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
@@ -140,9 +140,10 @@ def dashboard():
                 comes to market cap per employee and market cap per job offer. This would've been a simple approach to find 
                 the "best-capitalized job offers" by company. Unfortunately, I realized that daily job offering data is 
                 quite tricky to obtain, often paid and often incomplete. So, I decided to replace it with Twitter social 
-                media sentiment, a data source simple to obtain and also updated daily. As a result, the dashboard now 
-                displays the "best-capitalized workforce" for each company, along with their social media sentiment. Since 
-                the Twitter API ceased to be freely accessible in February 2023, I had to switch to Reddit social sentiment, 
+                media sentiment, a data source simple to obtain and also updated daily. As a result, the dashboard would 
+                display the "best-capitalized workforce" for each company, along with their social media sentiment. Since 
+                the Twitter API ceased to be freely accessible in February 2023, the API I used ceased to provide it, and I 
+                had to switch to Reddit social sentiment, 
                 which is unfortunately more scarce than Twitter sentiment, but it's still the best option I have for now 
                 without having to redesign the entire social sentiment part of the pipeline.""",
                 style={
@@ -156,7 +157,7 @@ def dashboard():
                 },
             ),
             html.H3(
-                """As of March 2023, this dashboard primarily serves as a working technical demo; however, I am committed to 
+                """As of March 2023, this dashboard primarily serves as a small working technical demo; however, I am committed to 
                 update and enhance the dashboard with more valuable data as I advance in my data engineering journey.""",
                 style={
                     "textAlign": "left",
