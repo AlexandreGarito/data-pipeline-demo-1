@@ -1,5 +1,6 @@
 """
 This update_psql module uses 2 functions to connect and update to the GCP Cloud SQL PostgreSQL database.
+For now, this serves no real purpose other than training me to interact with a SQL database in Python.
 
 Functions:
     - conn_to_psql : Connects to the GCP Cloud SQL PostgreSQL database.
