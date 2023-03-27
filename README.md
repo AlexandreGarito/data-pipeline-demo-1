@@ -1,6 +1,10 @@
-# GCP hosted micro-ETL pipeline and dashboard  
+# GCP-hosted micro-ETL pipeline and dashboard  
 
 <br>
+
+### Project summary :
+
+This project is a Python-coded and GCP-hosted data pipeline and interactive dashboard that displays API data using Dash-Plotly web framework, updated daily using DevOps tools such as CI/CD, Docker, and Airflow.
 
 Dashboard link : https://data-pipeline-demo-1-orqlvqurxq-ew.a.run.app/
 
@@ -17,6 +21,8 @@ Tools & skills in this project :
     ✔ Secret Manager (secure access to secrets hosted in GCP)  
 
 <br>
+
+### Project development overview :
 
 The purpose of this project is to showcase my ability to employ Python in extracting, transforming, loading, and displaying a simple set of API data within an interactive dashboard that updates daily. This serves as a small "A to Z project" in my data engineering journey, where I can gain experience with some tools and challenges involved in the field. This project also involves some DevOps processes and tools such as CI/CD, Docker, and Airflow. Although dashboarding is not a core skill in data engineering, here it serves as an accessory tool that demonstrates the functionality of this pipeline.  
 
