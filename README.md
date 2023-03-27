@@ -1,4 +1,4 @@
-# GCP-hosted micro-ETL pipeline and dashboard  
+# GCP-hosted micro-ETL data pipeline and dashboard  
 
 <br>
 
