@@ -307,10 +307,12 @@ def dashboard():
                             font_family="Lato",
                         )
                         .update_traces(
-                            hovertemplate=" <b>%{label}</b><br><br>Market Capitalization : %{value}<extra></extra>"
+                            hovertemplate=" <b>%{label}</b><br><br>Market Capitalization : $%{customdata}<extra></extra>",
+                            customdata=[f"{x:,.0f}" for x in df["marketCap"]],
                         )
                         .update_traces(marker=dict(cornerradius=20)),
                     )
+
                 ]
             )
         elif tab == "tab-barchart":
