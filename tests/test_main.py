@@ -1,9 +1,12 @@
+"""Unit testing the different functions called in the main script"""
+
 import os
 import tempfile
 from unittest.mock import Mock, patch, MagicMock
 import requests
 import json
 from main import (
+    ROW_LIMIT,
     screener_call,
     screener_transf,
     fte_call,
@@ -18,11 +21,8 @@ from main import (
 )
 
 
-ROW_LIMIT = 3
-
-
 def test_row_limit():
-    """Test if ROW_LIMIT is compatible with the script by being an integer > 0"""
+    """Test if ROW_LIMIT is compatible with the script by being a positive integer"""
 
     assert ROW_LIMIT > 0
     assert isinstance(ROW_LIMIT, int)

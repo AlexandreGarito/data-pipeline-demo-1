@@ -1,3 +1,16 @@
+""" The main script perform the following steps:
+- Determine the amount of rows (ROW_LIMIT) to filter on the company stock screener. This determines the amount of data 
+called on the APIs and displayed on the dashboard charts.
+- Configure logging settings
+- Extract and transform the data from the APIs
+- Write the transformed data to a csv file
+- Upload the data to a GCP Cloud SQL PostgreSQL database (serves no purpose at the moment, mainly to practice 
+my ability to connect and upload)
+- Execute sample queries to verify the proper insertion of data
+- Close the database connection
+- Generate the Dash Plotly dashboard webserver and run it on the open port of the GCP Cloud Run container.
+"""
+
 import logging
 import traceback
 from modules.extract_data import (
@@ -54,7 +67,6 @@ def app():
         close_conn_to_sql(pool, connector)
 
         # Generate the dash & plotly web dashboard
-
         dashboard()
 
     except Exception as e:

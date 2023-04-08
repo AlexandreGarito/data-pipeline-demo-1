@@ -2,7 +2,7 @@
 This dash_plotly_dashboard module uses a unique function to create an interactive
 dashboard webserver with Dash & Plotly libraries.
 
-Function:
+Functions:
     - dashboard : creates a simple dashboard with 3 callbacks for interactivity.
     - render_content_marketcap : Renders the left-side charts representing 
       classifications by market cap.

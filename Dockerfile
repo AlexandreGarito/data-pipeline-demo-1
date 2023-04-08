@@ -2,7 +2,7 @@ FROM python:3.9.5
 
 LABEL name="sde"
 LABEL maintainer="Alexandre Garito"
-LABEL description="Docker image for superdataexplorer.com main script"
+LABEL description="Docker image data-pipeline-demo-1 main script"
 LABEL version="1.0"
 
 WORKDIR /app
