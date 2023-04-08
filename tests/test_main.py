@@ -159,7 +159,7 @@ def test_screener_transf():
         screener_resp_com=mock_screener_resp_com,
     )
 
-    assert len(tickers_list) == ROW_LIMIT
+    assert len(tickers_list) == 5
     # Test for duplicate tickers
     # set(list) create a set from a list that removes any duplicate elements since sets only contain unique elements.
     assert len(tickers_list) == len(set(tickers_list))
