@@ -12,7 +12,7 @@ Dashboard link : https://data-pipeline-demo-1-orqlvqurxq-ew.a.run.app/
 
 
 <p align="center">
-  <img src="https://github.com/AlexandreGarito/data-pipeline-demo-1/blob/main/images/screencapture-data-pipeline-demo-1.png" width="35%; margin: 0 auto;" />
+  <img src="https://github.com/AlexandreGarito/data-pipeline-demo-1/blob/main/images/screencapture-data-pipeline-demo-1.png" width="50%; margin: 0 auto;" />
 </div>
 
 <br>
