@@ -10,6 +10,13 @@ This project is a Python-coded and GCP-hosted micro-ETL data pipeline and intera
 
 Dashboard link : https://data-pipeline-demo-1-orqlvqurxq-ew.a.run.app/
 
+
+<div style="text-align:center;">
+  <img src="https://github.com/AlexandreGarito/data-pipeline-demo-1/blob/main/images/screencapture-data-pipeline-demo-1.png" width="35%; margin: 0 auto;" />
+</div>
+
+<br>
+
 Tools & skills in this project :  
 
 ✅ Python (API calls, pandas, pytest unit testing, Dash-Plotly, code documentation) 
