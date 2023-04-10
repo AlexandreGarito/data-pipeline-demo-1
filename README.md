@@ -2,7 +2,7 @@
 
 <br>
 
-![illustration pipeline](https://github.com/AlexandreGarito/data-pipeline-demo-1/blob/main/images/illustration%20pipeline%20demo1.png)
+![illustration pipeline](https://github.com/AlexandreGarito/data-pipeline-demo-1/blob/main/images/illustration%20pipeline%20demo-1.png)
 
 ### Project summary :
 
