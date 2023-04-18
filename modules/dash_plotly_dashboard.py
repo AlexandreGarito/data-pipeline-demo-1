@@ -123,7 +123,8 @@ def dashboard():
             ),
             html.H3(
                 """Free and easily accessible API data was prioritized to facilitate long-term stability of the pipeline,
-                so it mostly focuses on the biggest companies in the Technology field.""",
+                data is therefore rather limited in order to stay under the free API rate limits and focuses on the biggest 
+                publicly traded companies of the Technology field.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
