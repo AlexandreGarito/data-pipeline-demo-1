@@ -161,7 +161,7 @@ def dashboard():
                 """As of March 2023, this dashboard primarily serves as a small working technical demo; however, I am committed to 
                 update and enhance the dashboard with more valuable data as I advance in my data engineering journey. Also, 
                 I discovered after a few days that Cloud Composer (managed Airflow) is actually somewhat expensive to run for 
-                an individual, so I'm rebooting my container with a cheaper GCP Cloud Scheduler cron job from now on.""",
+                an individual, so I'm rebooting my container with a cheaper GCP Cloud Scheduler + Cloud Function setup from now on.""",
                 style={
                     "textAlign": "left",
                     "backgroundColor": "#1F2630",
