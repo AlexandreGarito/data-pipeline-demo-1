@@ -475,7 +475,7 @@ def update_3d_highlighted_point(hoverData, tab):
         font_family="Lato",
     )
 
-    # scatter_data["data"][0]["marker"]["color"] = "green"
+    scatter_data["data"][0]["marker"]["color"] = "green"
 
     not_highlighted_df = df[df["companyName"] != company_name]
 
@@ -558,7 +558,7 @@ def update_2d_highlighted_point(hoverData, tab):
         .update_yaxes(tickprefix="$")
     )
 
-    # scatter_data["data"][0]["marker"]["color"] = "green"
+    scatter_data["data"][0]["marker"]["color"] = "green"
 
     not_highlighted_df = df[df["companyName"] != company_name]
 

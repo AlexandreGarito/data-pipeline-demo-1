@@ -144,7 +144,7 @@ def add_fte(employees_n_list, filtered_screener):
         {**d1, "fullTimeEmployees": d2["fullTimeEmployees"]}
         for d1, d2 in zip(filtered_screener, employees_n_list)
     ]
-
+    logging.info(f"DEBUGGING : {added_fte}")
     return added_fte
 
 
@@ -195,6 +195,7 @@ def yest_sent_call(tickers_list):
 
         d_list_sentiment.append(sentiment_summary)
         
+    logging.info(f"DEBUGGING d_list_sentiment : {d_list_sentiment}")
     return d_list_sentiment
 
 def add_yest_sent(added_fte, d_list_sentiment):
@@ -206,7 +207,7 @@ def add_yest_sent(added_fte, d_list_sentiment):
             pass
 
     final_data = added_fte
-
+    logging.info(f" DEBUGGING final : {final_data}")
     return final_data
 
 
