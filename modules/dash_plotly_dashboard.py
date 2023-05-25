@@ -29,10 +29,10 @@ def dashboard():
     camera = dict(eye=dict(x=0, y=-2.5, z=0.1))
 
     df = pd.read_csv("data/final_data.csv")
-    df = df.dropna()
+    
     df["normalized_sentiment"] = scaler.fit_transform(df[["yest_twitter_mean_sentiment_score"]])
     df["normalized_sentiment"] = df["normalized_sentiment"].round(2)
-
+    df = df.dropna()
 
     external_stylesheets = [
         'https://fonts.googleapis.com/css2?family=Lato&display=swap',
