@@ -60,6 +60,20 @@ def dashboard():
                     "font-size": 30,
                 },
             ),
+            html.H2(
+                "(please wait a few seconds for the charts to load)",
+                style={
+                    "textAlign": "center",
+                    "padding-top": "50px",
+                    "padding-left": "20px",
+                    "padding-bottom": "50px",
+                    "backgroundColor": "#1F2630",
+                    "font-family": "Lato",
+                    "color": "#c2d6ea",
+                    "font-weight": "bold",
+                    "font-size": 20,
+                },
+            ),
             html.Div(
                 [
                     html.Span("Github repository : "),
