@@ -64,9 +64,9 @@ def dashboard():
                 "(please wait a few seconds for the charts to load)",
                 style={
                     "textAlign": "center",
-                    "padding-top": "50px",
+                    "padding-top": "20px",
                     "padding-left": "20px",
-                    "padding-bottom": "50px",
+                    "padding-bottom": "25px",
                     "backgroundColor": "#1F2630",
                     "font-family": "Lato",
                     "color": "#c2d6ea",
