@@ -177,7 +177,7 @@ def dashboard():
                 update and enhance the dashboard with more valuable data as I advance in my data engineering journey. Also, 
                 I discovered after a few days that Cloud Composer (managed Airflow) is actually somewhat expensive to run for 
                 an individual, so I'm rebooting my container with a cheaper GCP Cloud Scheduler + Cloud Function setup from now on. Update: 
-                As of 16/03/2023, the Reddit API is no longer free to use. As a consequence, the Reddit Sentiment updates were stopped just 
+                As of 19/06/2023, the Reddit API is no longer free to use. As a consequence, the Reddit Sentiment updates were stopped just 
                 before the change.""",
                 style={
                     "textAlign": "left",
