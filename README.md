@@ -8,8 +8,6 @@
 
 This project is a Python-coded and GCP-hosted micro-ETL data pipeline and interactive dashboard that displays API data using the Dash-Plotly web framework, updated daily using DevOps tools such as CI/CD, Docker, and Airflow.
 
-Dashboard link : https://data-pipeline-demo-1-orqlvqurxq-ew.a.run.app/
-
 <br>
 
 <p align="center">
